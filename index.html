@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Erova Taksi – 7/24 Güvenilir Ulaşım</title>
+<meta name="description" content="Erova Taksi – Hayrettin Uzun. 7/24 taksi hizmeti. Tek telefonla çağırın, kısa sürede adresinizdeyiz.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--y:#F5C518;--bg:#0d1626;--bg2:#131f35;--ink:#fff;--mut:#a9b6cc;--font:'Inter',system-ui,sans-serif;--disp:'Bebas Neue','Arial Narrow',Impact,sans-serif;color-scheme:dark}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:400 1rem/1.6 var(--font);padding-top:env(safe-area-inset-top,0px)}
+a{color:inherit}
+.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
+.hd{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(13,22,38,.92);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;min-height:64px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:400 1.7rem/1 var(--disp);letter-spacing:.06em}
+.logo i{display:inline-block;background:var(--y);color:#111;font-style:normal;padding:2px 8px;border-radius:3px;font-size:1.2rem}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--y);color:#111;font:700 .95rem/1 var(--font);padding:14px 22px;border-radius:999px;text-decoration:none;border:0;cursor:pointer}
+.btn.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35)}
+.hero{padding:clamp(48px,9vw,110px) 0 clamp(40px,6vw,70px)}
+.eyebrow{font:700 .72rem/1 var(--font);letter-spacing:.24em;text-transform:uppercase;color:var(--y)}
+.hero h1{font:400 clamp(3rem,9vw,7rem)/.95 var(--disp);letter-spacing:.02em;margin:16px 0 18px}
+.hero h1 em{font-style:normal;color:var(--y)}
+.hero p{max-width:34em;color:var(--mut);font-size:1.1rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+/* 3D sahne */
+.tr{position:relative;height:800vh}
+.st{position:sticky;top:calc(64px + env(safe-area-inset-top,0px));height:calc(100vh - 64px);height:calc(100svh - 64px - env(safe-area-inset-top,0px));overflow:hidden;background:var(--bg)}
+#cv{position:absolute;inset:0;width:100%;height:100%;display:block}
+.st::before,.st::after{content:"";position:absolute;left:0;right:0;z-index:1;pointer-events:none}
+.st::before{top:0;height:130px;background:linear-gradient(180deg,rgba(13,22,38,.95),transparent)}
+.st::after{bottom:0;height:200px;background:linear-gradient(0deg,rgba(13,22,38,.97),transparent)}
+.top{position:absolute;left:0;right:0;top:0;z-index:2;padding-top:clamp(16px,2.6vw,28px);pointer-events:none}
+.top h2{font:400 clamp(2rem,5vw,3.6rem)/1 var(--disp);letter-spacing:.03em;margin-top:10px}
+.top h2 em{font-style:normal;color:var(--y)}
+.steps{position:absolute;left:0;right:0;bottom:22px;margin-inline:auto;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;list-style:none}
+.steps li{border-top:2px solid rgba(255,255,255,.18);padding-top:10px;opacity:.42;transition:.35s}
+.steps li.on{opacity:1;border-top-color:var(--y)}
+.steps b{display:block;font:700 .7rem/1 var(--font);letter-spacing:.2em;color:var(--y);margin-bottom:6px}
+.steps h3{font:400 1.5rem/1.1 var(--disp);letter-spacing:.04em;margin-bottom:2px}
+.steps p{font-size:.86rem;color:var(--mut);line-height:1.45}
+.bar{position:absolute;left:0;right:0;bottom:0;height:3px;background:rgba(255,255,255,.12);z-index:3}
+.bar span{display:block;height:100%;background:var(--y);transform-origin:0 50%;transform:scaleX(0)}
+.hint{position:absolute;left:50%;bottom:160px;transform:translateX(-50%);z-index:2;font:700 .72rem/1 var(--font);letter-spacing:.22em;text-transform:uppercase;color:var(--y);transition:opacity .4s}
+.hint.gone{opacity:0}
+.end{position:absolute;left:50%;bottom:150px;transform:translate(-50%,20px);z-index:4;opacity:0;pointer-events:none;transition:.5s}
+.end.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.tr.fb{height:auto}.tr.fb .st{position:relative;top:0;height:auto;min-height:340px}.tr.fb #cv,.tr.fb .hint{display:none}.tr.fb .top{position:relative}
+/* bölümler */
+.sec{padding:clamp(56px,8vw,100px) 0}
+.sec h2.t{font:400 clamp(2.2rem,5vw,3.6rem)/1 var(--disp);letter-spacing:.03em;margin:12px 0 30px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--bg2);border:1px solid rgba(255,255,255,.08);padding:26px;border-radius:10px}
+.card h3{font:400 1.7rem/1 var(--disp);letter-spacing:.04em;color:var(--y);margin-bottom:8px}
+.card p{color:var(--mut)}
+.contact{background:var(--y);color:#111;text-align:center}
+.contact .eyebrow{color:#111}
+.contact h2{font:400 clamp(2.4rem,7vw,5rem)/1 var(--disp);margin:12px 0}
+.contact .num{display:inline-block;font:400 clamp(2.2rem,8vw,5.5rem)/1 var(--disp);letter-spacing:.04em;text-decoration:none;border-bottom:4px solid #111}
+.contact .nums{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 40px}
+.contact .who{font:700 1rem/1.4 var(--font);letter-spacing:.04em;margin-top:16px}
+.contact .btn{background:#111;color:#fff}
+.contact .cta{justify-content:center}
+footer{padding:26px 0;color:var(--mut);font-size:.85rem;text-align:center}
+@media(max-width:820px){.grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr;bottom:16px}.steps li{display:none}.steps li.on{display:block}.hint{bottom:110px}.end{bottom:110px}.st::after{height:150px}}
+</style>
+</head>
+<body>
+<header class="hd"><div class="wrap">
+  <a class="logo" href="#"><i>EROVA</i> TAKSİ</a>
+  <a class="btn" href="tel:+905308713133">📞 Hemen Ara</a>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <p class="eyebrow">7/24 hizmet</p>
+  <h1>Bir telefon kadar <em>yakınız.</em></h1>
+  <p>Şehir içi ve şehirler arası yolculuklarda temiz araç, güvenli sürüş ve zamanında varış. Aşağı kaydırın, yolculuğu izleyin.</p>
+  <div class="cta"><a class="btn" href="tel:+905308713133">📞 0530 871 31 33</a><a class="btn ghost" href="https://wa.me/905308713133">WhatsApp ile yaz</a></div>
+</div></section>
+
+<section class="tr" id="track" aria-labelledby="ttl">
+  <div class="st" id="stage">
+    <canvas id="cv" role="img" aria-label="Taksinin müşteriyi alıp varış noktasına götürmesini gösteren 3D animasyon"></canvas>
+    <div class="wrap top"><p class="eyebrow">Yolculuk adım adım</p><h2 id="ttl">Çağırın, biz <em>gelelim.</em></h2></div>
+    <p class="hint" id="hint">Kaydırın ↓</p>
+    <ol class="wrap steps" id="steps">
+      <li class="on"><b>01</b><h3>Arayın</h3><p>Tek telefonla çağırın, taksi yola çıksın.</p></li>
+      <li><b>02</b><h3>Taksi gelir</h3><p>Kısa sürede adresinizdeyiz.</p></li>
+      <li><b>03</b><h3>Rahat yolculuk</h3><p>Temiz araç, güvenli ve konforlu sürüş.</p></li>
+      <li><b>04</b><h3>Varış</h3><p>İstediğiniz adrese sorunsuz ulaşın.</p></li>
+    </ol>
+    <a class="btn end" id="end" href="tel:+905308713133">📞 Şimdi taksi çağır</a>
+    <div class="bar"><span id="fill"></span></div>
+  </div>
+</section>
+
+<section class="sec"><div class="wrap">
+  <p class="eyebrow">Neden biz</p><h2 class="t">Yolda güven, kapıda hız</h2>
+  <div class="grid">
+    <div class="card"><h3>7/24 Açık</h3><p>Gece gündüz, hafta sonu ve bayramlarda da aramanız yeterli.</p></div>
+    <div class="card"><h3>Temiz ve Bakımlı Araç</h3><p>Her yolculuğa temiz, bakımlı ve konforlu araçla çıkarız.</p></div>
+    <div class="card"><h3>Şehir İçi ve Dışı</h3><p>Kısa mesafeden şehirler arası yolculuğa kadar her adrese.</p></div>
+  </div>
+</div></section>
+
+<section class="sec contact" id="iletisim"><div class="wrap">
+  <p class="eyebrow">İletişim</p>
+  <h2>Taksi mi lazım?</h2>
+  <div class="nums">
+    <a class="num" href="tel:+905308713133">0530 871 31 33</a>
+    <a class="num" href="tel:+905447152062">0544 715 20 62</a>
+  </div>
+  <p class="who">Hayrettin Uzun · Erova Taksi Durağı</p>
+  <div class="cta"><a class="btn" href="tel:+905308713133">📞 Hemen Ara</a><a class="btn" href="https://wa.me/905308713133">WhatsApp</a></div>
+</div></section>
+<footer><div class="wrap">© <span id="yr"></span> Erova Taksi Durağı · Hayrettin Uzun · Tüm hakları saklıdır</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+(function(){
+var track=document.getElementById('track'),stage=document.getElementById('stage'),cv=document.getElementById('cv'),
+ fill=document.getElementById('fill'),hint=document.getElementById('hint'),endB=document.getElementById('end'),steps=document.querySelectorAll('#steps li');
+function fail(){track.classList.add('fb');}
+if(!window.THREE){fail();return;}
+var R0;try{R0=new THREE.WebGLRenderer({canvas:cv,antialias:true});}catch(e){fail();return;}
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function cl(v,a,b){return v<a?a:v>b?b:v;}
+function ss(x){x=cl(x,0,1);return x*x*(3-2*x);}
+function mix(a,b,t){return a+(b-a)*t;}
+function rnd(a,b){return a+Math.random()*(b-a);}
+var seed=7;Math.random=function(){seed=(seed*16807)%2147483647;return (seed-1)/2147483646;};
+R0.shadowMap.enabled=true;R0.shadowMap.type=THREE.PCFSoftShadowMap;
+var scene=new THREE.Scene();scene.background=new THREE.Color(0x0d1626);scene.fog=new THREE.Fog(0x0d1626,70,360);
+var cam=new THREE.PerspectiveCamera(48,1,.5,900);
+function tex(w,h,fn){var c=document.createElement('canvas');c.width=w;c.height=h;fn(c.getContext('2d'),w,h);var t=new THREE.CanvasTexture(c);t.anisotropy=4;return t;}
+scene.add(new THREE.HemisphereLight(0x8fa6d6,0x1a2230,.9));
+var moon=new THREE.DirectionalLight(0xaec3ff,.7);moon.castShadow=true;moon.shadow.mapSize.set(2048,2048);moon.shadow.bias=-.0006;
+var sc=moon.shadow.camera;sc.left=-70;sc.right=70;sc.top=70;sc.bottom=-70;sc.near=10;sc.far=300;scene.add(moon,moon.target);
+var ground=new THREE.Mesh(new THREE.PlaneGeometry(1600,1600),new THREE.MeshStandardMaterial({color:0x1a2230,roughness:1}));ground.rotation.x=-Math.PI/2;ground.receiveShadow=true;scene.add(ground);
+
+/* yol */
+var curve=new THREE.CatmullRomCurve3([[0,0,20],[0,0,-60],[4,0,-120],[34,0,-190],[84,0,-240],[154,0,-250],[214,0,-290],[250,0,-350]].map(function(a){return new THREE.Vector3(a[0],0,a[1]);}));
+var LEN=curve.getLength(),UP=.27;
+function ribbon(w,y,color){var S=320,v=[],ix=[];for(var i=0;i<=S;i++){var u=i/S,P=curve.getPointAt(u),T=curve.getTangentAt(u),sx=T.z,sz=-T.x;v.push(P.x+sx*w,y,P.z+sz*w,P.x-sx*w,y,P.z-sz*w);if(i<S){var a=i*2;ix.push(a,a+1,a+2,a+1,a+3,a+2);}}
+ var g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(v,3));g.setIndex(ix);g.computeVertexNormals();
+ var m=new THREE.Mesh(g,new THREE.MeshStandardMaterial({color:color,roughness:.9,side:THREE.DoubleSide}));m.receiveShadow=true;scene.add(m);}
+ribbon(11,.03,0x4a5366);ribbon(7.5,.06,0x232834);
+var dashM=new THREE.MeshBasicMaterial({color:0xf1e9c8});
+for(var d=4;d<LEN;d+=9){var u=d/LEN,P=curve.getPointAt(u),T=curve.getTangentAt(u),m=new THREE.Mesh(new THREE.BoxGeometry(.35,.04,3.6),dashM);m.position.set(P.x,.09,P.z);m.rotation.y=Math.atan2(T.x,T.z);scene.add(m);}
+/* şehir: binalar + lambalar */
+var winT=[0,1,2].map(function(k){return tex(128,256,function(g,w,h){g.fillStyle='#161d2e';g.fillRect(0,0,w,h);for(var y=0;y<16;y++)for(var x=0;x<8;x++){var r=Math.random();g.fillStyle=r<.38?(k==1?'#bfe0ff':'#ffd36b'):'#232c42';g.fillRect(x*16+3,y*16+3,10,10);}});});
+var bm=winT.map(function(t){return new THREE.MeshStandardMaterial({map:t,emissive:0xffffff,emissiveMap:t,emissiveIntensity:.75,roughness:.9});});
+var lampM=new THREE.MeshBasicMaterial({color:0xffe9a8}),poleM=new THREE.MeshStandardMaterial({color:0x2a3140});
+for(var s=0,n=0;s<LEN+20;s+=12,n++){var u2=cl(s/LEN,0,1),Pc=curve.getPointAt(u2),Tc=curve.getTangentAt(u2),hd=Math.atan2(Tc.x,Tc.z);
+ [1,-1].forEach(function(sd){var w=rnd(8,15),dp=rnd(8,13),h=rnd(10,46),off=15+rnd(0,8)+w/2;
+  var b=new THREE.Mesh(new THREE.BoxGeometry(w,h,dp),bm[Math.floor(rnd(0,3))]);b.position.set(Pc.x+Tc.z*sd*off,h/2,Pc.z-Tc.x*sd*off);b.rotation.y=hd;b.castShadow=true;b.receiveShadow=true;scene.add(b);});
+ if(n%2==0){var sd2=(n/2)%2?1:-1,px=Pc.x+Tc.z*sd2*9.6,pz=Pc.z-Tc.x*sd2*9.6,pl=new THREE.Mesh(new THREE.BoxGeometry(.28,7.5,.28),poleM);pl.position.set(px,3.75,pz);scene.add(pl);
+  var lh=new THREE.Mesh(new THREE.SphereGeometry(.6,10,8),lampM);lh.position.set(px,7.6,pz);scene.add(lh);}}
+/* taksi */
+var taxi=new THREE.Group(),yel=new THREE.MeshStandardMaterial({color:0xf5c518,roughness:.45,metalness:.2}),blk=new THREE.MeshStandardMaterial({color:0x14171d,roughness:.7}),
+ glass=new THREE.MeshStandardMaterial({color:0x7fa6c9,roughness:.15,metalness:.4});
+function bx(w,h,d,m,x,y,z){var o=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);o.position.set(x,y,z);o.castShadow=true;taxi.add(o);return o;}
+bx(4.2,1.2,9.2,yel,0,1.0,0);bx(3.7,1.15,4.8,glass,0,2.15,-.4);bx(3.5,.12,4.6,yel,0,2.78,-.4);
+var chk=tex(128,16,function(g,w,h){for(var i=0;i<16;i++)for(var j=0;j<2;j++){g.fillStyle=(i+j)%2?'#111':'#fff';g.fillRect(i*8,j*8,8,8);}});chk.wrapS=THREE.RepeatWrapping;chk.repeat.set(4,1);
+bx(4.24,.3,9.22,new THREE.MeshBasicMaterial({map:chk}),0,1.1,0);
+var signT=tex(256,96,function(g,w,h){g.fillStyle='#fff6c2';g.fillRect(0,0,w,h);g.fillStyle='#111';g.font='700 70px sans-serif';g.textAlign='center';g.textBaseline='middle';g.fillText('TAKSİ',w/2,h/2+4);});
+var sm=new THREE.MeshBasicMaterial({map:signT}),sg=new THREE.MeshBasicMaterial({color:0xfff6c2});
+var sign=new THREE.Mesh(new THREE.BoxGeometry(1.9,.55,.9),[sg,sg,sg,sg,sm,sm]);sign.position.set(0,3.15,-.4);taxi.add(sign);
+bx(.9,.35,.12,new THREE.MeshBasicMaterial({color:0xfff2c0}),-1.4,1.05,4.62);bx(.9,.35,.12,new THREE.MeshBasicMaterial({color:0xfff2c0}),1.4,1.05,4.62);
+bx(.9,.3,.12,new THREE.MeshBasicMaterial({color:0xff3b3b}),-1.4,1.1,-4.62);bx(.9,.3,.12,new THREE.MeshBasicMaterial({color:0xff3b3b}),1.4,1.1,-4.62);
+var wheels=[];[[-2.15,2.9],[2.15,2.9],[-2.15,-2.9],[2.15,-2.9]].forEach(function(a){var w=new THREE.Mesh(new THREE.CylinderGeometry(.85,.85,.7,18),blk);w.rotation.z=Math.PI/2;w.position.set(a[0],.85,a[1]);w.castShadow=true;taxi.add(w);wheels.push(w);});
+var spot=new THREE.SpotLight(0xfff2c0,1.3,90,.55,.6);spot.position.set(0,1.2,4);spot.target.position.set(0,0,30);taxi.add(spot,spot.target);
+scene.add(taxi);
+/* yolcu, çağrı halkası, varış iğnesi */
+function side(u){var T=curve.getTangentAt(u);return new THREE.Vector3(T.z,0,-T.x);}
+var pp=curve.getPointAt(UP),ps=side(UP).multiplyScalar(-1),pass=new THREE.Group();
+var pb=new THREE.Mesh(new THREE.CylinderGeometry(.55,.65,2.2,10),new THREE.MeshStandardMaterial({color:0x3a6ea5}));pb.position.y=1.1;var ph=new THREE.Mesh(new THREE.SphereGeometry(.5,12,10),new THREE.MeshStandardMaterial({color:0xe0b08a}));ph.position.y=2.6;
+pass.add(pb,ph);pass.traverse(function(o){o.castShadow=true;});scene.add(pass);
+var ring=new THREE.Mesh(new THREE.RingGeometry(1.8,2.2,32),new THREE.MeshBasicMaterial({color:0xf5c518,transparent:true,side:THREE.DoubleSide}));ring.rotation.x=-Math.PI/2;ring.position.y=.12;scene.add(ring);
+var call=new THREE.Mesh(new THREE.SphereGeometry(.45,12,10),new THREE.MeshBasicMaterial({color:0xf5c518}));scene.add(call);
+var ep=curve.getPointAt(1),es=side(1).multiplyScalar(-1).multiplyScalar(9);
+var pin=new THREE.Group(),pm=new THREE.MeshStandardMaterial({color:0xff4b4b,emissive:0xff2020,emissiveIntensity:.5});
+var pc=new THREE.Mesh(new THREE.ConeGeometry(1.7,4.2,16),pm);pc.rotation.x=Math.PI;pc.position.y=2.1;var pbh=new THREE.Mesh(new THREE.SphereGeometry(1.8,16,12),pm);pbh.position.y=5.4;pin.add(pc,pbh);
+pin.position.set(ep.x+es.x,0,ep.z+es.z);scene.add(pin);
+var dr=new THREE.Mesh(new THREE.RingGeometry(3.2,3.8,32),new THREE.MeshBasicMaterial({color:0xff4b4b,transparent:true,side:THREE.DoubleSide}));dr.rotation.x=-Math.PI/2;dr.position.set(pin.position.x,.12,pin.position.z);scene.add(dr);
+
+var curP=0,raf=0,lastIdx=-1,lastU=0,camPos=new THREE.Vector3(),first=true;
+function getP(){var top=track.getBoundingClientRect().top,st=parseFloat(getComputedStyle(stage).top)||0,tot=track.offsetHeight-stage.offsetHeight;return cl((st-top)/tot,0,1);}
+function resize(){var w=stage.clientWidth,h=stage.clientHeight;R0.setPixelRatio(Math.min(window.devicePixelRatio||1,2));R0.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();}
+function apply(p,now){
+ var u=p<.12?0:p<.40?UP*ss((p-.12)/.28):p<.52?UP:p<.90?mix(UP,1,ss((p-.52)/.38)):1;
+ var P=curve.getPointAt(u),T=curve.getTangentAt(u);
+ taxi.position.set(P.x,0,P.z);taxi.lookAt(P.x+T.x,0,P.z+T.z);taxi.rotation.z=Math.sin(now*.004)*.004;
+ var dist=(u-lastU)*LEN;lastU=u;wheels.forEach(function(w){w.rotation.x+=dist/.85;});
+ /* yolcu */
+ var b=ss((p-.40)/.10),home=new THREE.Vector3(pp.x+ps.x*9,0,pp.z+ps.z*9),door=new THREE.Vector3(pp.x+ps.x*2.7,0,pp.z+ps.z*2.7);
+ pass.position.lerpVectors(home,door,b);pass.position.y=Math.abs(Math.sin(now*.006))*.08*(1-b);
+ pass.scale.setScalar(Math.max(.001,1-ss((b-.75)/.25)));pass.visible=b<.999;
+ pass.lookAt(pass.position.x-ps.x,0,pass.position.z-ps.z);
+ var wt=1-ss((p-.40)/.06);ring.visible=call.visible=wt>.01;ring.position.set(home.x,.12,home.z);var rs=1+((now*.002)%1)*1.2;ring.scale.setScalar(rs);ring.material.opacity=(1.2-rs/2.2)*wt;
+ call.position.set(home.x,4.3+Math.sin(now*.005)*.3,home.z);call.scale.setScalar(wt);
+ /* varış */
+ pin.position.y=Math.abs(Math.sin(now*.004))*1.1;var dr2=1+((now*.002)%1)*.8;dr.scale.setScalar(dr2);dr.material.opacity=1.1-dr2/1.8;
+ /* kamera */
+ var a=.9,Rr=24,H=8.5;
+ var k1=ss((p-.06)/.1);a=mix(a,.35,k1);Rr=mix(Rr,27,k1);H=mix(H,10,k1);
+ var k2=ss((p-.36)/.06);a=mix(a,1.25,k2);Rr=mix(Rr,19,k2);H=mix(H,6.5,k2);
+ var k3=ss((p-.52)/.08);a=mix(a,.35,k3);Rr=mix(Rr,27,k3);H=mix(H,10,k3);
+ var k4=ss((p-.90)/.10);a=mix(a,-.7,k4);Rr=mix(Rr,62,k4);H=mix(H,24,k4);
+ var hd=Math.atan2(T.x,T.z),ph2=hd+Math.PI+a;
+ var tgt=new THREE.Vector3(P.x,1.6,P.z).lerp(new THREE.Vector3(pin.position.x,3,pin.position.z),k4*.45);
+ var want=new THREE.Vector3(P.x+Math.sin(ph2)*Rr,H,P.z+Math.cos(ph2)*Rr);
+ if(first||reduce){camPos.copy(want);first=false;}else camPos.lerp(want,.12);
+ cam.position.copy(camPos);cam.lookAt(tgt);
+ moon.position.set(P.x-30,100,P.z+40);moon.target.position.set(P.x,0,P.z);
+ var idx=p<.12?0:p<.52?1:p<.90?2:3;
+ if(idx!==lastIdx){lastIdx=idx;for(var i=0;i<steps.length;i++)steps[i].classList.toggle('on',i===idx);}
+ fill.style.transform='scaleX('+p+')';hint.classList.toggle('gone',p>.02);endB.classList.toggle('on',p>.93);
+}
+function frame(now){raf=requestAnimationFrame(frame);curP+=(getP()-curP)*(reduce?1:.12);apply(curP,now);R0.render(scene,cam);}
+resize();window.addEventListener('resize',resize);
+if('IntersectionObserver' in window){new IntersectionObserver(function(es){if(es[0].isIntersecting){if(!raf)raf=requestAnimationFrame(frame);}else{cancelAnimationFrame(raf);raf=0;}},{rootMargin:'200px'}).observe(track);}else{raf=requestAnimationFrame(frame);}
+})();
+</script>
+</body>
+</html>
